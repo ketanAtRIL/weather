@@ -19,13 +19,13 @@ const authenticateToken = (req, res, next) => {
 
 router.post('/add', authenticateToken, async (req, res) => {
   const { name } = req.body;
-  const { weather } = req.body;
-  const { temparature } = req.body;
+  //const { weather } = req.body;
+  //const { temparature } = req.body;
   if (!name) {
     return res.status(400).json({ message: "City name is required" });
   }
   try {
-    const newCity = new City({ name },{weather},{temparature});
+    const newCity = new City({ name });
     await newCity.save();
     res.status(201).json(newCity);
   } catch (error) {

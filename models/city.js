@@ -5,15 +5,15 @@ const citySchema = new mongoose.Schema({
     type: String,
     required: true,
   }
-  ,
-  temperature: {
-    type: Number,
-    required: true
-  },
-  weather: {
-    type: String,
-    required: true
-  }
+  //,
+  // temperature: {
+  //   type: Number,
+  //   required: true
+  // },
+  // weather: {
+  //   type: String,
+  //   required: true
+  // }
 }, 
 {
   //timestamps: true // Adds createdAt and updatedAt timestamps automatically

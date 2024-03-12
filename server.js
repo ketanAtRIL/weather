@@ -9,7 +9,7 @@ const app = express();
 const weatherRoutes = require('./routes/weather');
 const cityRoutes = require('./routes/cities');
 
-const uri = "mongodb+srv://ketansutar2022:Simple@123@weather.zkpmrmv.mongodb.net/?retryWrites=true&w=majority&appName=weather"
+//const uri = "mongodb+srv://ketansutar2022:Simple@123@weather.zkpmrmv.mongodb.net/?retryWrites=true&w=majority&appName=weather"
 
 app.use(express.json()); // Middleware to parse JSON bodies
 
@@ -17,7 +17,10 @@ const port = process.env.PORT || 3000;
 
 
 // MongoDB connection
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017/weather', 
+{ 
+  //useNewUrlParser: true, useUnifiedTopology: true 
+})
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
