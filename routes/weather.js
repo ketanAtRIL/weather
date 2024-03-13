@@ -14,6 +14,7 @@ router.get('/weather', async (req, res) => {
         console.log(`Weather for ${city.name}:`, response.data.main.temp);
     })
     });
+    console.log("end of list");
   }
   catch(error){
     console.error(`Error fetching weather for ${city.name}:`, error);
